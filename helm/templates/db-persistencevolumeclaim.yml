@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: dbvendas-pv-claim
+  labels:
+    app: {{ .Release.Name }}-db
+spec:
+  storageClassName: manual
+  accessModes:
+    - {{ .Values.storage.acessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.storage.size }}Gi

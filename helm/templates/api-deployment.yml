@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}deploy
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}deploy
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}deploy
+    spec:
+      containers:
+      - name: apivendas
+        image: {{ .Values.image.repository }}/{{ .Release.Name }}:{{ .Values.image.version }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+          - name: POSTGRES_HOST
+            value: {{ .Release.Name }}dbservice
+          - name: POSTGRES_DB
+            value: {{ .Values.dbName }}
+          - name: POSTGRESQL_PORT_NUMBER
+            value: "{{ .Values.postgres.port }}"
+          - name: POSTGRES_USER
+            value: {{ .Values.postgres.user }}
+          - name: POSTGRES_PASSWORD
+            value: {{ .Values.postgres.password }}
+          - name: APIVENDAS_AUTH_SECRET
+            value: {{ .Values.authSecret }}
