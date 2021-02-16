@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbvendas
+spec:
+  selector:
+    matchLabels:
+      app: dbvendas
+  template:
+    metadata:
+      labels:
+        app: dbvendas
+    spec:
+      containers:
+        - name: dbvendas
+          image: postgres:12-alpine
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: apivendas
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: dbvendasdata
+      volumes:
+        - name: dbvendasdata
+          persistentVolumeClaim:
+            claimName: dbvendas-pv-claim

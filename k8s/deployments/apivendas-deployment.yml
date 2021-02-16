@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apivendasdeploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: apivendasdeploy
+  template:
+    metadata:
+      labels:
+        app: apivendasdeploy
+    spec:
+      containers:
+      - name: apivendas
+        image: #
+        ports:
+        - containerPort: 8080
+        env:
+          - name: APIVENDAS_DB_HOST
+            value: dbservice
+          - name: APIVENDAS_DB_PORT
+            value: "5432"
+          - name: APIVENDAS_DB_USERNAME
+            value: postgres
+          - name: APIVENDAS_DB_PASSWORD
+            value: postgres
+          - name: APIVENDAS_AUTH_SECRET
+            value: ambientedev
