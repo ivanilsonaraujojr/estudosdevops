@@ -16,6 +16,7 @@
 * ### Teste contínuo
     * #### [JUnit](https://junit.org/junit5/docs/current/user-guide/)
     * #### [Jacoco coverage](https://www.jacoco.org/jacoco/trunk/doc/)
-
+* ### Feedback contínuo/Monitoramento contínuo
+    * #### [Grafana](https://grafana.com/docs/)
 
 Por [Ivanilson Junior](https://www.linkedin.com/in/ivanilson-junior-052937186/)!
