@@ -1,13 +1,14 @@
-#  Estudos de tecnologias para as práticas DevOps
+<h1 align="center">Estudos de tecnologias para as práticas DevOps :arrows_counterclockwise:</h1>
 
 ## Aplicação utilizada para os exemplos: [apivendas](https://github.com/ivanilsonaraujojr/apivendas)
 
-## Tecnologias utilizadas
+## :wrench: Tecnologias utilizadas
 * ### Infraestrutura como código
     * ### [Docker](https://docs.docker.com/)
     * ### [Kubernetes](https://kubernetes.io/pt/docs/home/)
     * ### [Helm](https://helm.sh/docs/)
-    * ### [Docker Compose](https://docs.docker.com/compose/)
+    * ### [Docker Compose](https://docs.docker.com/compose)
+    
 * ### Integração contínua/Implantação contínua
     * ### [Gitlab](https://gitlab.com)
     * ### [Gitlab CI](https://docs.gitlab.com/ee/ci/)
@@ -15,3 +16,5 @@
 * ### Teste contínuo
     * ### [JUnit](https://junit.org/junit5/docs/current/user-guide/)
     * ### [Jacoco coverage](https://www.jacoco.org/jacoco/trunk/doc/)
+
+Por [Ivanilson Junior](https://www.linkedin.com/in/ivanilson-junior-052937186/)!
